@@ -12,4 +12,7 @@ RUN mkdir -p /var/www/html/public
 
 RUN docker-php-ext-install pdo pdo_mysql
 
+# RUN chown -R ${PHPUSER}:${PHPGROUP} /var/www/html
+# RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+
 CMD ["php-fpm", "-g", "/usr/local/etc/php-fpm.conf", "-R"]
